@@ -1,0 +1,121 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #fce4ec; /* Soft pink background */
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+/* Page Container */
+.page-container {
+  text-align: center;
+  max-width: 600px; /* Ensure content doesn't stretch too wide */
+  margin: 0 auto;
+}
+
+/* Top Section */
+.top h1 {
+  font-size: 3rem;
+  color: #ff3366;
+  margin-bottom: 10px;
+}
+
+.top h3 {
+  font-size: 1.8rem;
+  color: #ff6699;
+  font-weight: 300;
+}
+
+/* Ghost Icon */
+.ghost-icon {
+  font-size: 4rem;
+  color: #ff3366;
+  margin: 20px 0;
+}
+
+/* Surprise Section */
+.container {
+  margin-top: 40px;
+}
+
+.surprise-text {
+  font-size: 1.5rem;
+  color: #ff6699;
+  margin-bottom: 20px;
+}
+
+/* Bottom Section */
+.bottom {
+  margin-top: 20px;
+}
+
+.back-link {
+  font-size: 1.5rem;
+  color: #ff3366;
+  text-decoration: none;
+  font-weight: bold;
+  border: 2px solid #ff3366;
+  padding: 10px 20px;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.back-link:hover {
+  background-color: #ff3366;
+  color: white;
+}
+
+/* Footer Styling */
+footer {
+  margin-top: 30px;
+  font-size: 1rem;
+  color: #ff6699;
+}
+
+footer p {
+  font-weight: bold;
+}
+
+/* Text and Icon Alignments */
+.page-container {
+  text-align: center;
+}
+
+.surprise-text, .top h1, .top h3 {
+  margin-bottom: 20px;
+}
+
+.surprise-icon {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+/* Responsiveness */
+@media (max-width: 600px) {
+  .top h1 {
+    font-size: 2.5rem;
+  }
+
+  .top h3 {
+    font-size: 1.5rem;
+  }
+
+  .surprise-text {
+    font-size: 1.2rem;
+  }
+
+  .back-link {
+    font-size: 1rem;
+  }
+}
