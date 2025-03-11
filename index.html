@@ -7,9 +7,88 @@
   <link rel="stylesheet" href="styles.css">
   <!-- Font Awesome for the Ghost Icon -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    /* Fade Effect */
+    .fade {
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .fade.visible {
+      opacity: 1;
+    }
+
+    /* General Page Styling */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+
+    /* Page Container Styling */
+    .page-container {
+      text-align: center;
+      padding: 20px;
+    }
+
+    /* Top Section */
+    .top {
+      margin-bottom: 30px;
+    }
+
+    h1 {
+      font-size: 3em;
+      color: #333;
+    }
+
+    h3 {
+      font-size: 1.5em;
+      color: #555;
+    }
+
+    /* Ghost Icon */
+    .ghost-icon {
+      font-size: 100px;
+      color: #999;
+      margin-bottom: 20px;
+    }
+
+    /* Surprise Text */
+    .surprise-text {
+      font-size: 1.5em;
+      color: #555;
+    }
+
+    /* Bottom Section */
+    .bottom {
+      margin-top: 30px;
+    }
+
+    .back-link {
+      font-size: 1.2em;
+      color: #ff6347; /* Tomato color */
+      text-decoration: none;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 40px;
+      font-size: 2em;
+      color: #333;
+    }
+
+    footer p {
+      margin: 0;
+    }
+  </style>
 </head>
 <body>
-  <div class="page-container">
+  <div class="page-container fade" id="page-container">
     <div class="top">
       <h1>Welcome Back</h1>
       <h3>It seems you’ve voluntarily entered into a contract of perpetual fascination with me.</h3>
@@ -31,6 +110,13 @@
       <p>♡</p>
     </footer>
   </div>
+
+  <script>
+    // Function to trigger fade-in effect when the page loads
+    window.onload = function() {
+      const container = document.getElementById('page-container');
+      container.classList.add('visible');
+    };
+  </script>
 </body>
 </html>
-
