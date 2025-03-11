@@ -7,7 +7,19 @@
   <link rel="stylesheet" href="styles.css">
   <!-- Font Awesome for the Ghost Icon -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <!-- Google Fonts for typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  
   <style>
+    /* General Page Styling */
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      overflow-x: hidden;
+    }
+
     /* Fade Effect */
     .fade {
       opacity: 0;
@@ -18,46 +30,75 @@
       opacity: 1;
     }
 
-    /* General Page Styling */
-    body {
-      font-family: 'Arial', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f9f9f9;
+    /* Smooth Scrolling */
+    html {
+      scroll-behavior: smooth;
     }
 
     /* Page Container Styling */
     .page-container {
       text-align: center;
       padding: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Background Animation */
+    body {
+      background: linear-gradient(45deg, #ff6b6b, #f7b731, #48dbfb);
+      background-size: 400% 400%;
+      animation: gradientAnimation 10s ease infinite;
+    }
+
+    @keyframes gradientAnimation {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
     }
 
     /* Top Section */
     .top {
       margin-bottom: 30px;
+      padding: 20px;
+      color: #fff;
     }
 
     h1 {
-      font-size: 3em;
-      color: #333;
+      font-size: 3.5em;
+      color: #fff;
+      margin-bottom: 20px;
     }
 
     h3 {
-      font-size: 1.5em;
-      color: #555;
+      font-size: 1.8em;
+      color: #fff;
+      font-weight: 400;
     }
 
     /* Ghost Icon */
     .ghost-icon {
-      font-size: 100px;
-      color: #999;
+      font-size: 120px;
+      color: #fff;
       margin-bottom: 20px;
+      animation: bounce 2s infinite;
     }
 
     /* Surprise Text */
     .surprise-text {
-      font-size: 1.5em;
-      color: #555;
+      font-size: 1.8em;
+      color: #fff;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    .surprise-text:hover {
+      color: #ff6347; /* Tomato color */
     }
 
     /* Bottom Section */
@@ -66,24 +107,41 @@
     }
 
     .back-link {
-      font-size: 1.2em;
+      font-size: 1.5em;
       color: #ff6347; /* Tomato color */
       text-decoration: none;
+      padding: 15px 30px;
+      border-radius: 30px;
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
     }
 
     .back-link:hover {
-      text-decoration: underline;
+      background-color: #ff6347;
+      color: #fff;
+      transform: translateY(-5px);
     }
 
     /* Footer */
     footer {
       margin-top: 40px;
       font-size: 2em;
-      color: #333;
+      color: #fff;
     }
 
     footer p {
       margin: 0;
+    }
+
+    /* Bouncing Ghost Animation */
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
     }
   </style>
 </head>
@@ -99,7 +157,7 @@
       <div class="ghost-icon">
         <i class="fas fa-ghost"></i>
       </div>
-      <p class="surprise-text">Want to see a surprise?</p>
+      <p class="surprise-text" id="surprise-text">Want to see a surprise?</p>
     </div>
 
     <div class="bottom">
@@ -111,12 +169,48 @@
     </footer>
   </div>
 
+  <!-- Optional Pop-up Modal (for a surprise) -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" id="close-btn">&times;</span>
+      <h2>Surprise!</h2>
+      <p>You've unlocked a surprise. Thanks for interacting!</p>
+    </div>
+  </div>
+
   <script>
-    // Function to trigger fade-in effect when the page loads
+    // Fade-in effect
     window.onload = function() {
       const container = document.getElementById('page-container');
       container.classList.add('visible');
     };
+
+    // Interactive Surprise Text
+    document.getElementById('surprise-text').addEventListener('click', function() {
+      alert('Here comes your surprise! 🎉');
+    });
+
+    // Modal functionality (for more interaction)
+    const modal = document.getElementById("modal");
+    const closeBtn = document.getElementById("close-btn");
+
+    // Open modal on page load (or you can tie it to a button/event)
+    setTimeout(function() {
+      modal.style.display = "block";
+    }, 3000); // Show after 3 seconds
+
+    // Close the modal
+    closeBtn.onclick = function() {
+      modal.style.display = "none";
+    };
+
+    // Close modal if user clicks outside of it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    };
   </script>
+
 </body>
 </html>
