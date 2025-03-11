@@ -5,9 +5,146 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Page Not Found</title>
   <link rel="stylesheet" href="styles.css">
+  <!-- Font Awesome for the Ghost Icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <!-- Google Fonts for typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* General Page Styling */
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      overflow-x: hidden;
+    }
+
+    /* Fade Effect */
+    .fade {
+      opacity: 0;
+      transition: opacity 1.5s ease-in-out;
+    }
+
+    .fade.visible {
+      opacity: 1;
+    }
+
+    /* Smooth Scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Page Container Styling */
+    .page-container {
+      text-align: center;
+      padding: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Background Animation */
+    body {
+      background: linear-gradient(45deg, #ff6b6b, #f7b731, #48dbfb);
+      background-size: 400% 400%;
+      animation: gradientAnimation 10s ease infinite;
+    }
+
+    @keyframes gradientAnimation {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    /* Top Section */
+    .top {
+      margin-bottom: 30px;
+    }
+
+    h1 {
+      font-size: 3.5em;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      font-size: 1.8em;
+      color: #555;
+      font-weight: 400;
+    }
+
+    /* Ghost Icon */
+    .ghost-icon {
+      font-size: 120px;
+      color: #999;
+      margin-bottom: 20px;
+      animation: bounce 2s infinite;
+    }
+
+    /* Surprise Text */
+    .surprise-text {
+      font-size: 1.8em;
+      color: #555;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    .surprise-text:hover {
+      color: #ff6347; /* Tomato color */
+    }
+
+    /* Bottom Section */
+    .bottom {
+      margin-top: 30px;
+    }
+
+    .back-link {
+      font-size: 1.5em;
+      color: #ff6347; /* Tomato color */
+      text-decoration: none;
+      padding: 15px 30px;
+      border-radius: 30px;
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .back-link:hover {
+      background-color: #ff6347;
+      color: #fff;
+      transform: translateY(-5px);
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 40px;
+      font-size: 2em;
+      color: #333;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    /* Bouncing Ghost Animation */
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+  </style>
 </head>
 <body>
-  <div class="page-container">
+  <div class="page-container fade" id="page-container">
     <div class="top">
       <h1>404</h1>
       <h3>NOT FOUND</h3>
@@ -22,7 +159,7 @@
     </div>
 
     <div class="bottom">
-      <a href="index.html" class="back-link">Take me back </a>
+      <a href="index.html" class="back-link">Take me back</a>
     </div>
 
     <footer>
