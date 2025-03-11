@@ -32,5 +32,18 @@
 
   <!-- Add Font Awesome -->
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+  <!-- Fade-in Effect JavaScript -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      let pageContainer = document.querySelector(".page-container");
+      pageContainer.style.opacity = 0;
+      pageContainer.style.transition = "opacity 1.5s ease-in-out";
+      
+      setTimeout(() => {
+        pageContainer.style.opacity = 1;
+      }, 100); // Small delay for smooth effect
+    });
+  </script>
 </body>
 </html>
